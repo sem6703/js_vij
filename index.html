@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="favicon.ico">
   <link rel="icon" type="image/x-icon" href=
 "data:image/gif;base64,R0lGODlhEAAQAOYAAP///0E6ORsUFQcGBwcFBgcFBRoaGQ0NDg8QERMUFBQVFRAREd3e3fr//yokJQ4ODxQUFBYWFRUVFQAAAG1ubr+/v0NAPgsMDBMUExEREQoLCwQEBNfX19zW146MjSkoJhYWFhMTEwcHBzIxMXx5evf19Xd1dB4dHBISEiAgILKrrm5rbeTl5cjGxpybl5KQjhcWFhMTFBQUFQoKChITEaenp7y8vGBfYBYVFWBgYH56erW1tVVVVSMiIQ8QEAwMDA0NDV5eXjAmJTUxMkA8PAoKCxoaGnp6elFQUPj5+dvb21xaVxAPDygmJm1qap2bm7e3t2ddXqSiok9IRw4NDQ4ODg8ODwYHB0FAQHl5e46Kik9MSxITEgUFBwYICAcICQABADIwL87MzVpUU0VCQEU/PlBLSwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFewAAACwAAAAAEAAQAAAHtIAAggAWHycwMD1ES4ONDhcPKDEhPkVMU40ABg8YIBESOCAgPlRbgwEHEBISEDIQqhJVXIMCCJ8hrLmrXWOCAwkSGSIpIhI/Rj8QXmSCBAoQGiMqMxJAR01WX2WCBQsTGyQrNBMTSE5XYGaDDBMcJRM1OUETT1hhjQ0UDQ0TNvsTULKIyVShQwMW+xokaaAl0yATLRIqieKwkYsGOoRUzPSiwY4hGweRu8GDXEgPq1JKkNIoEAA7">
   
@@ -391,7 +390,7 @@ https://www.cyberforum.ru/cryptography/thread3034197.html
 
 	<div class="krot rott3" onclick="newgame(keylen);geon=edit1.value;">run</div>
 	<div class="krot rott3" onclick="edit1.value=geon;newgame(keylen);">reset</div>
-	<div class="krot rott3" onclick="edit1.value='';edit2.value='';edit3.value='';gopp();">clear</div>
+	<div class="krot rott3" onclick="geon='';edit1.value='';edit2.value='';edit3.value='';gopp();">clear</div>
 
 </div>
 
@@ -400,12 +399,13 @@ https://www.cyberforum.ru/cryptography/thread3034197.html
 	border:1px solid gray;border-radius:4px;
 	background: linear-gradient(#e5eeeb, #83b0c4);
 	">
-		<select id="lik" onchange="wax(this.value)" style="width:60px;border:1px solid cyan;">
+		<select id="lik" onchange="geon='';wax(this.value)" style="width:60px;border:1px solid cyan;">
 		  <option value="1">П 1</option>
 		  <option value="2">П 2</option>  
 		  <option value="3">П 3</option> 
 		  <option value="4">П 4</option> 	
-		  <option value="5">П 5</option> 		  
+		  <option value="5">П 5</option> 
+		  <option value="6">П 6</option><!--	-->	  
 		</select>
 	</div>
 
@@ -441,14 +441,15 @@ text-align:center;"><tr style="background: linear-gradient(#e5eeeb, #83b0c4);">
 <td style="width:24px;"><label style="display:flex;justify-content:center;height:100%;" ><input type="checkbox" id="larv" name="para" onchange="blind=blind^1; move('z')"></label></td>
 <td style="width:80px;" onclick="newgame(keylen);geon=edit1.value;">run</td>
 <td style="width:80px;" onclick="edit1.value=geon;newgame(keylen);">reset</td>
-<td style="width:80px;" onclick="edit1.value='';edit2.value='';edit3.value='';gopp();">clear</td>
+<td style="width:80px;" onclick="geon='';edit1.value='';edit2.value='';edit3.value='';gopp();">clear</td>
 <td style="width:70px;">
-		<select id="lyk" onchange="wax(this.value);lik.value=this.value;" style="width:60px;border:1px solid cyan;">
+		<select id="lyk" onchange="geon='';wax(this.value);lik.value=this.value;" style="width:60px;border:1px solid cyan;">
 		  <option value="1">П 1</option>
 		  <option value="2">П 2</option>  
 		  <option value="3">П 3</option> 
 		  <option value="4">П 4</option> 	
-		  <option value="5">П 5</option> 		  
+		  <option value="5">П 5</option> 
+		  <option value="6">П 6</option><!-- -->		  
 		</select>
 </td>
 <td style="width:60px;" onclick="cury.push(cury.shift());move('z');">&#8592;</td>
@@ -544,11 +545,11 @@ fq:[21,7 ,14,4 ,9 ,34   ,4 ,12,21,11,11,12,16,35,38,8 ,12,
 		//  С  Т  У  Ф  Х  Ц  Ч  Ш  Щ  Ъ  Ы  Ь  Э  Ю  Я  
 			18,19,8 ,2 ,5 ,1 ,4 ,3 ,2    ,13,3 ,0 ,0 ,11],
 },{//8en
-buk:"ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+buk:"ABCDEFGHIJKLMNOPQRSTUVWXYZ_",
   // A   B   C   D   E   F   G   H   I   J   K   L   M
 fq:[ 82, 15, 28, 43,127, 22, 20, 61, 70,  2,  8, 40, 24, 
-		//  N   O   P   Q   R   S   T   U   V   W   X   Y   Z
-			68, 75, 19,  1, 60, 63, 91, 28, 10, 24,  2, 20,  1],
+		//  N   O   P   Q   R   S   T   U   V   W   X   Y   Z    _
+			68, 75, 19,  1, 60, 63, 91, 28, 10, 24,  2, 20,  1, 150],
 },
 ];//
 
@@ -566,7 +567,7 @@ let curx=0;
 let cury=Array(keylen).fill(0);
 let tt,aaa,txt;///
 let ass7=[];
-let geon;//="ТРИГОНОМЕТРИЯ";
+let geon='';//="ТРИГОНОМЕТРИЯ";
 const anit=document.querySelectorAll('.act');
 const gina=document.querySelectorAll('.acg');
 let blind=0;//1//0// требется для решения https://otvet.mail.ru/question/231785423
@@ -591,8 +592,9 @@ function wax(x){//оброботчик выбора примера
 ЩВЩНУХЗГНТЦПЛТЦЕКПШИСДНВБЕФВЩТ ЧУЛВРХЖ_РРЯОШПЛЦРАКВЗНЩМЧЯИТН`;newgame(4);break}
 		case '5':{edit1.value=
 `ЧКВЮЪОКБРЮЛЧЯКИЛТСЕЦРДУГЗСХРПЫКЧЦЙСЛФАЖВСЦРВШМДБГБ СЬЫЯХОДТЙИРУУМХНУЬМЗЪДРПЫШГРПГЭТЛЮЮЛЦЦКФЛКЬЖХЛУТЯХ ЭКЭГМЦЕРЙЫПРЩЮШЛУХЛИЛГЭИИЛЗЯЕАСДТМАЗЭЯБГЛФЬМЖЦУФМХ ЦЕЭЛФЛДРЮЖЛЧЦУХЫУАЮИТКРЙЫЮДРКГТКВЮЧЖЧМЮХРЗЦПЗФДНРЮ ЛКЬЪХФДБМЖЩЕРАБСЦВГХЬЕБРИЮДРЖКЛПЯОВФДБЮБМРЯЙЫЮЦВАЦ`;newgame(5);break}
+		case '6':{edit1.value=
+`IPCXMIBWVTNBMJQBMFQYMITIMHEVVMFDFPGDZQNPRZBDVHTINTNBMLQRMABO_WYDIPCXMQUDFPGDG_GDANBWRVFM_OBBABBXAHUGUWQPMH_SGHUIRUBRAABXAHNINZPDNV_XUQPKMHYLKHKJMTKXFTGDUIPWMKCQRHWTMPGVRHCRQHUEIHQYDHYEDUBJVZGDNVFDABTDTWQHM_WTBMTDNVFDABTDTZGEFHEEESBSSHTIQHYM_MBLRHOMTPVDTMVDRVXMABUDNVFDRVXBMQUDNHOSEABXRZTMOTGDFPKRTHCRQHYSGTFDEXQMYHCRKJQHKHUD_IVYDMBDVHEIDACM_T_DIQNPMVQXMINPADBLNVUD_IVYDMBXAHDIM_RSVTGHMHKDNUBLV_BFR_VDSZKI_LBE_LBMMDKPYHCPII_WMDCXPPBSHMTDUQODNVFDEMGDFPCXMPGDV_BRAABPRLBM_AQDNV_DFMOTFIVMAVUDMJGWVLGWMQHDUIPWMKCQRHJIDMBLRHOMTPVDN_MDZMBXAHNIFHJMZHJEHMBWAUGDSTQYDHQRMKTIQQVDNVFDFPCXMQBGABNHMVQXMLQDMNNSGZBMEHQRRHVLVVIDNVFDSZKI_LULVXBMEHCRAAJIDHCRQHVLRFBWUWWPQHPSFHDIMKQRSBUIQHB_UFBXUMB_AZFWMITIM_RIYABHVNHIDMPXYFBE_LBQRIPDCBKXRHFMSNGVRVVDFPKRT_BDRCGVKJQHKHEE_HUIRHVLNA`;newgame(5);break}
 }
-
 	geon=edit1.value;
 	lik.blur();
 	lyk.blur();	
@@ -752,7 +754,7 @@ return h;
 
 
 function newgame(x,y){
-	txt=edit1.value.toUpperCase();
+	if (geon) {txt=geon}else{txt=edit1.value.toUpperCase();}
 	if (txt.length<3) txt='ИСТОРИЯ';
 	pars1e(txt,y);//считаю алфавит
 	keylen=x??1;
@@ -925,10 +927,10 @@ let dk=fri(xxx);
 let ja=dk.map((x,i)=>
 
 `<option value="${x[0]}"${(keylen==x[0])?' selected':''}> ${x[0]} (${x[1]})</option>`
-);
+);//geon='';geon='';
 let cane=
 `
-<select id="satr" onchange="newgame(+this.value);this.blur();uran.blur();"
+<select id="satr" onchange="(+this.value);this.blur();uran.blur();"
 style="width:90px;border:1px solid cyan;border-radius:4px
 ">`+
 ja.join('')
