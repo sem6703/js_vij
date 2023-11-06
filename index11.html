@@ -7,7 +7,7 @@
   <link rel="icon" type="image/x-icon" href=
 "data:image/gif;base64,R0lGODlhEAAQAOYAAP///0E6ORsUFQcGBwcFBgcFBRoaGQ0NDg8QERMUFBQVFRAREd3e3fr//yokJQ4ODxQUFBYWFRUVFQAAAG1ubr+/v0NAPgsMDBMUExEREQoLCwQEBNfX19zW146MjSkoJhYWFhMTEwcHBzIxMXx5evf19Xd1dB4dHBISEiAgILKrrm5rbeTl5cjGxpybl5KQjhcWFhMTFBQUFQoKChITEaenp7y8vGBfYBYVFWBgYH56erW1tVVVVSMiIQ8QEAwMDA0NDV5eXjAmJTUxMkA8PAoKCxoaGnp6elFQUPj5+dvb21xaVxAPDygmJm1qap2bm7e3t2ddXqSiok9IRw4NDQ4ODg8ODwYHB0FAQHl5e46Kik9MSxITEgUFBwYICAcICQABADIwL87MzVpUU0VCQEU/PlBLSwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFewAAACwAAAAAEAAQAAAHtIAAggAWHycwMD1ES4ONDhcPKDEhPkVMU40ABg8YIBESOCAgPlRbgwEHEBISEDIQqhJVXIMCCJ8hrLmrXWOCAwkSGSIpIhI/Rj8QXmSCBAoQGiMqMxJAR01WX2WCBQsTGyQrNBMTSE5XYGaDDBMcJRM1OUETT1hhjQ0UDQ0TNvsTULKIyVShQwMW+xokaaAl0yATLRIqieKwkYsGOoRUzPSiwY4hGweRu8GDXEgPq1JKkNIoEAA7">
   
-  <title>Шифр Виженера 12en</title>
+  <title>Шифр Виженера 11en</title>
   <style>
 *:not(hr), *::after, 
 *::before {
@@ -545,19 +545,12 @@ fq:[21,7 ,14,4 ,9 ,34   ,4 ,12,21,11,11,12,16,35,38,8 ,12,
 		//  С  Т  У  Ф  Х  Ц  Ч  Ш  Щ  Ъ  Ы  Ь  Э  Ю  Я  
 			18,19,8 ,2 ,5 ,1 ,4 ,3 ,2    ,13,3 ,0 ,0 ,11],
 },{//8en
-buk:"ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-  // A   B   C   D   E   F   G   H   I   J   K   L   M
-fq:[ 82, 15, 28, 43,127, 22, 20, 61, 70,  2,  8, 40, 24, 
-		//  N   O   P   Q   R   S   T   U   V   W   X   Y   Z  
-			68, 75, 19,  1, 60, 63, 91, 28, 10, 24,  2, 20,  1, ],
-},{//9en
 buk:"ABCDEFGHIJKLMNOPQRSTUVWXYZ_",
   // A   B   C   D   E   F   G   H   I   J   K   L   M
 fq:[ 82, 15, 28, 43,127, 22, 20, 61, 70,  2,  8, 40, 24, 
 		//  N   O   P   Q   R   S   T   U   V   W   X   Y   Z    _
 			68, 75, 19,  1, 60, 63, 91, 28, 10, 24,  2, 20,  1, 150],
 },
-
 ];//
 
 
@@ -683,10 +676,9 @@ function pars1e(x,y){
 	{nalf=5}// русский без _Ё	
 	if((x.indexOf('Ъ')<0)&&(x.indexOf('Ё')<0)&&(x.indexOf('_')<0))
 	{nalf=7}// русский без ЁЪ_	
-	if(x.includes('E')){
-	  if(x.includes('_')){nalf=9}// english	
-	  else{nalf=8}
-	}
+	if(x.includes('E'))
+	{nalf=8}// english	
+	
 	
 	ac=affa[nalf].buk; asse=affa[nalf].fq;	
 	
