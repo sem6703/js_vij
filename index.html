@@ -7,7 +7,7 @@
   <link rel="icon" type="image/x-icon" href=
 "data:image/gif;base64,R0lGODlhEAAQAOYAAP///0E6ORsUFQcGBwcFBgcFBRoaGQ0NDg8QERMUFBQVFRAREd3e3fr//yokJQ4ODxQUFBYWFRUVFQAAAG1ubr+/v0NAPgsMDBMUExEREQoLCwQEBNfX19zW146MjSkoJhYWFhMTEwcHBzIxMXx5evf19Xd1dB4dHBISEiAgILKrrm5rbeTl5cjGxpybl5KQjhcWFhMTFBQUFQoKChITEaenp7y8vGBfYBYVFWBgYH56erW1tVVVVSMiIQ8QEAwMDA0NDV5eXjAmJTUxMkA8PAoKCxoaGnp6elFQUPj5+dvb21xaVxAPDygmJm1qap2bm7e3t2ddXqSiok9IRw4NDQ4ODg8ODwYHB0FAQHl5e46Kik9MSxITEgUFBwYICAcICQABADIwL87MzVpUU0VCQEU/PlBLSwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFewAAACwAAAAAEAAQAAAHtIAAggAWHycwMD1ES4ONDhcPKDEhPkVMU40ABg8YIBESOCAgPlRbgwEHEBISEDIQqhJVXIMCCJ8hrLmrXWOCAwkSGSIpIhI/Rj8QXmSCBAoQGiMqMxJAR01WX2WCBQsTGyQrNBMTSE5XYGaDDBMcJRM1OUETT1hhjQ0UDQ0TNvsTULKIyVShQwMW+xokaaAl0yATLRIqieKwkYsGOoRUzPSiwY4hGweRu8GDXEgPq1JKkNIoEAA7">
   
-  <title>Шифр Виженера 13en</title>
+  <title>Шифр Виженера 14en</title>
   <style>
 *:not(hr), *::after, 
 *::before {
@@ -689,11 +689,11 @@ function pars1e(x,y){
 	{nalf=5}// русский без _Ё	
 	if((x.indexOf('Ъ')<0)&&(x.indexOf('Ё')<0)&&(x.indexOf('_')<0))
 	{nalf=7}// русский без ЁЪ_	
-	if(x.includes('E')){
+	if(x.includes('E')||x.includes('X')||x.includes('S')){
 	  if(x.includes('_')){nalf=9}// english	
 	  else{nalf=8}
 	}
-	
+	//alert(nalf);
 	ac=affa[nalf].buk; asse=affa[nalf].fq;	
 	
 	if (nalf==1){god=[true,false,false]}//ru1;ac==affa[1].buk	
